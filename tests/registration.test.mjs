@@ -24,7 +24,7 @@ test('registers exactly one native Nous Girl theme contribution', () => {
   assert.equal(registrations[0].id, 'nous-girl')
   assert.equal(registrations[0].data.name, 'nous-girl')
   assert.equal(registrations[0].data.label, 'Nous Girl')
-  assert.equal(registrations[0].data.description, 'Ink and paper surfaces with a single gold accent')
+  assert.equal(registrations[0].data.description, 'Monochrome ink and paper surfaces, with the Nous Girl in the banner')
   assert.equal(registrations[0].data.customCSS, undefined)
   assert.ok(registrations[0].data.darkColors)
   assert.ok(registrations[0].data.terminal)

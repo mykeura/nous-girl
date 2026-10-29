@@ -3,10 +3,10 @@
 
 name: nous-girl-theme
 label: Nous Girl
-version: "0.1.0"
+version: "0.1.1"
 manifest_version: 2
 api_version: 1
-description: "Monochrome ink-and-paper theme for Hermes Desktop, with the Nous Girl in gold for the CLI."
+description: "Monochrome ink-and-paper theme for Hermes Desktop; the CLI banner is painted from its own palette."
 author: Miguel Euraque (@mykeura)
 license: MIT
 homepage: https://github.com/mykeura/nous-girl-theme-for-hermes

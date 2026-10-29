@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-10-28
+
+### Fixed
+
+- The CLI banner now takes its colours from the theme instead of the built-in gold. Both skins ship `banner_logo`, so the Hermes wordmark no longer falls back to `HERMES_AGENT_LOGO`, whose colours are hardcoded and ignore the active skin.
+- The hero art of the Nous Girl is painted with a value ladder taken from the skin's own palette (smoke to bone in dark, ash to ink in light) instead of the logo's source gold, which was indistinguishable from the default banner on a monochrome theme.
+
+### Changed
+
+- The theme description reads "Monochrome ink and paper surfaces, with the Nous Girl in the banner".
+- The test suite now gates the wordmark (six rows, one colour span per row, palette values only) and the hero ramp endpoints, and covers 24 assertions.
+
 ## [0.1.0] - 2026-10-28
 
 ### Added

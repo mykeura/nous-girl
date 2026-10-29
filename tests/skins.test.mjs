@@ -129,8 +129,51 @@ for (const [name, skin] of Object.entries(skins)) {
     }
   })
 
-  test(`${name}: carries no wordmark, so the hero owns the banner art`, () => {
-    assert.equal(skin.banner_logo, undefined)
+  // The wordmark must be shipped, not inherited: without `banner_logo` the CLI
+  // falls back to HERMES_AGENT_LOGO, whose colours are hardcoded to the built-in
+  // gold and ignore the active skin entirely.
+  test(`${name}: ships a 6-row wordmark in the theme's own colours`, () => {
+    assert.equal(skin.banner_logo.length, 6)
+    assert.ok(skin.banner_logo[0].startsWith('[bold #'), `first logo row must open with "[bold #", got ${skin.banner_logo[0].slice(0, 20)}`)
+    for (const [index, row] of skin.banner_logo.entries()) {
+      assert.ok(row.endsWith('[/]'), `logo row ${index + 1} must close its colour span`)
+      assert.equal((row.match(/\[(?:bold )?#[0-9a-fA-F]{6}\]/g) ?? []).length, 1, `logo row ${index + 1} must open exactly one colour span`)
+    }
+  })
+
+  // Art must resolve against the skin, not against the terminal's default
+  // foreground: the ramp ends and its peak are palette values, and the rows
+  // between them climb and fall monotonically so the mark still reads as one
+  // gradient.
+  const rowColours = rows => rows.map(row => row.match(/\[(?:bold )?(#[0-9a-fA-F]{6})\]/)[1].toLowerCase())
+
+  test(`${name}: hero ramp starts, peaks and ends on palette colours`, () => {
+    const palette = new Set(Object.values(skin.colors).map(value => value.toLowerCase()))
+    const colours = rowColours(skin.banner_hero)
+    const peak = (colours.length - 1) / 2
+    for (const [index, colour] of colours.entries()) {
+      if (index !== 0 && index !== peak && index !== colours.length - 1) continue
+      assert.ok(palette.has(colour), `${name}: hero row ${index + 1} (${colour}) is not a skin palette colour`)
+    }
+    // Neighbouring rows may differ by at most 24 levels per channel: enough for
+    // a 15-row ramp between palette endpoints, tight enough to catch a stop
+    // that belongs to another theme.
+    const step = (colour, reference) => Math.max(...[1, 3, 5].map(offset => Math.abs(
+      Number.parseInt(colour.slice(offset, offset + 2), 16) - Number.parseInt(reference.slice(offset, offset + 2), 16))))
+    const inner = colours.slice(0, Math.ceil(peak))
+    for (let index = 1; index < inner.length; index += 1) {
+      assert.ok(
+        step(inner[index], inner[index - 1]) <= 24,
+        `${name}: hero row ${index + 1} jumps away from the ramp (${inner[index - 1]} -> ${inner[index]})`
+      )
+    }
+  })
+
+  test(`${name}: every wordmark row uses a palette colour`, () => {
+    const palette = new Set(Object.values(skin.colors).map(value => value.toLowerCase()))
+    for (const [index, colour] of rowColours(skin.banner_logo).entries()) {
+      assert.ok(palette.has(colour), `${name}: wordmark row ${index + 1} (${colour}) is not a skin palette colour`)
+    }
   })
 
   test(`${name}: body text and status text stay readable on the background`, () => {

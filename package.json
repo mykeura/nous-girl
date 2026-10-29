@@ -1,9 +1,9 @@
 {
   "name": "nous-girl-theme-for-hermes",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
-  "description": "Monochrome ink-and-paper theme for Hermes Desktop, with the Nous Girl in gold for the CLI.",
+  "description": "Monochrome ink-and-paper theme for Hermes Desktop; the CLI banner is painted from its own palette.",
   "scripts": {
     "check": "node --check desktop/plugin.js",
     "test": "node --test tests/"

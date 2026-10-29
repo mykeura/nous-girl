@@ -1,13 +1,13 @@
 # Nous Girl Theme for Hermes
 
-Nous Girl is a monochrome theme for Hermes. Ink on paper in light mode, paper on ink in dark mode, with a single warm accent: the gold of the Nous Girl herself, which appears only in the CLI banner.
+Nous Girl is a monochrome theme for Hermes. Ink on paper in light mode, paper on ink in dark mode. The CLI banner — the Hermes wordmark and the Nous Girl standing in for the caduceus — is painted from each skin's own palette rather than from the built-in gold, so the whole surface, art included, belongs to the theme.
 
 The package uses Hermes' native Desktop Plugin SDK. It registers one `DesktopTheme` in `THEMES_AREA` with a light palette, a real dark palette and a matching ANSI terminal pair for each mode. It does not modify Hermes core, inject a stylesheet, ship fonts, or touch the DOM.
 
 ## Features
 
 - One theme, **Nous Girl**, with genuine light and dark palettes in Hermes' native theme picker.
-- CLI/TUI skins `nous-girl-light` and `nous-girl-dark` for the Hermes Agent terminal, each carrying the character as braille banner art.
+- CLI/TUI skins `nous-girl-light` and `nous-girl-dark` for the Hermes Agent terminal, each carrying the character and the wordmark as braille banner art.
 - Target contrast of at least 4.5:1 for normal text and 3:1 for controls, icons, and focus states, verified in the test suite.
 - Terminal palettes derived from the same values as the interface, so the embedded terminal never drifts from the theme.
 
@@ -72,7 +72,9 @@ Picking a CLI skin also moves the Desktop appearance, because `display.skin` is 
 | Hairline border | `#55524B` | `#6E6B64` |
 | Destructive | `#9E2F22` | `#BC4A3D` |
 
-The interface is deliberately achromatic: hierarchy comes from value, not hue, so the palette stays calm next to code, diffs and terminal output. The one colour in the package is the character's gold ramp, and it lives in the skins' `banner_hero` only. The light skin uses a darker brass ramp of the same hues, because `#FFD700` on paper measures 1.07:1 and would be invisible.
+The interface is deliberately achromatic: hierarchy comes from value, not hue, so the palette stays calm next to code, diffs and terminal output.
+
+The banner art follows the same rule. Both skins ship `banner_hero` and `banner_logo`, and every ramp stop is a value from that skin's palette: the dark skin climbs from `#6E6B64` to `#F2EEE3` at the centre of the figure, the light skin from `#5F5B52` to `#161512`. Shipping both keys is not cosmetic — when a skin omits `banner_logo`, the CLI falls back to `HERMES_AGENT_LOGO`, whose colours are hardcoded to the built-in gold and ignore the active skin, which is why an unthemed wordmark keeps appearing next to themed art.
 
 ## Development and verification
 

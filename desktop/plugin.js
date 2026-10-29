@@ -4,12 +4,13 @@
 import { THEMES_AREA } from '@hermes/plugin-sdk'
 
 // Nous Girl is a surface-and-colour theme: ink and paper in light, paper and
-// ink in dark, and no type system of its own (the host fonts stay). The gold
-// belongs to the CLI hero art only, so the Desktop picker stays monochrome.
+// ink in dark, and no type system of its own (the host fonts stay). Desktop
+// carries no art, so the picker stays monochrome; the skins paint the banner
+// from these same values.
 export const nousGirlTheme = {
   name: 'nous-girl',
   label: 'Nous Girl',
-  description: 'Ink and paper surfaces with a single gold accent',
+  description: 'Monochrome ink and paper surfaces, with the Nous Girl in the banner',
   colors: {
     background: '#E6E1D3',
     foreground: '#161512',
