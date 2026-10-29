@@ -20,7 +20,7 @@
 hermes plugins install mykeura/nous-girl --enable
 ```
 
-Reopen Hermes Desktop and select **Nous Girl** in the theme picker. The package is installed at `$HERMES_HOME/plugins/nous-girl-theme`; nothing is copied by hand.
+Reopen Hermes Desktop and select **Nous Girl** in the theme picker. The package is installed at `$HERMES_HOME/plugins/nous-girl-theme`; nothing is copied by hand. If the theme is missing or still shows an older description after an update, use **⌘K → Reload desktop plugins**.
 
 Install only code you have reviewed. Plugins run in the Desktop process, so keep access to this repository in case you need to remove the package.
 
@@ -50,15 +50,6 @@ hermes plugins remove nous-girl-theme    # delete it
 ```
 
 Do not edit or delete files inside Hermes core. If you copied the skins, remove them from `~/.hermes/skins/` as well.
-
-## Troubleshooting
-
-| Symptom | Fix |
-| --- | --- |
-| The theme is not in the picker | **⌘K → Reload desktop plugins**, then reopen Appearance. After an update the picker can keep the old description until you reload. |
-| The CLI still shows the previous colours | The terminal emulator may be serving a cached palette (Alacritty running through `herdr` is a known case). Try kitty, or restart the emulator. |
-| The terminal colours look wrong or stale | Check that `~/.hermes/skins/*.yaml` came from the version reported by `hermes plugins list`, and re-run the copy step after updating. |
-| The light skin is unreadable | `nous-girl-light` is for light terminal backgrounds. On black, use `nous-girl-dark`. |
 
 ## Preview
 
