@@ -1,6 +1,6 @@
 # Nous Girl
 
-**Ink on paper in light mode, paper on ink in dark.** A monochrome theme for Hermes Desktop and the Hermes Agent CLI, named after the Nous Girl — the character the terminal banner draws in braille, painted from the theme's own palette instead of the built-in gold.
+**A warm monochrome theme for Hermes Desktop and the Hermes Agent CLI.** Light and real dark palettes in the native picker, muted terminal colours, and the Nous Girl — the character the terminal banner draws in braille, painted from the theme's own palette.
 
 ![The Hermes Agent CLI with the nous-girl-dark skin: the Hermes wordmark and the Nous Girl portrait painted in the skin's own palette](images/nous-girl-cli.png)
 
@@ -55,11 +55,11 @@ Do not edit or delete files inside Hermes core. If you copied the skins, remove 
 
 ### Light mode
 
-![Nous Girl in Hermes Desktop, light mode: ink on paper surfaces](images/nous-girl-light.png)
+![Nous Girl in Hermes Desktop, light mode: warm neutral surfaces with near-black text](images/nous-girl-light.png)
 
 ### Dark mode
 
-![Nous Girl in Hermes Desktop, dark mode: paper on ink surfaces](images/nous-girl-dark.png)
+![Nous Girl in Hermes Desktop, dark mode: near-black surfaces with bone-white text](images/nous-girl-dark.png)
 
 ## A small way to support the project
 

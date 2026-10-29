@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "type": "module",
-  "description": "Monochrome ink-and-paper theme for Hermes Desktop and the Agent CLI.",
+  "description": "A warm monochrome theme for Hermes Desktop and the Agent CLI, with CLI skins for the terminal.",
   "scripts": {
     "check": "node --check desktop/plugin.js",
     "test": "node --test tests/"

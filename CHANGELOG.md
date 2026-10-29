@@ -23,4 +23,5 @@ All notable changes to this project are documented in this file. The format is b
 - Inert Agent entry point (`__init__.py`) so the plugin loads under Hermes Agent without registering tools, hooks or settings.
 - Test suite covering registration, the 26-key palette in both modes, the 38-key skin schema, banner geometry, WCAG contrast for interface and terminal, and a cross-check that keeps the values shared by the skins and `desktop/plugin.js` identical.
 
-[0.1.0]: https://github.com/mykeura/nous-girl-theme-for-hermes/releases/tag/v0.1.0
+[0.1.0]: https://github.com/mykeura/nous-girl/releases/tag/v0.1.0
+[0.1.1]: https://github.com/mykeura/nous-girl/releases/tag/v0.1.1

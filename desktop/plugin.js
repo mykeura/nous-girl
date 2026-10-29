@@ -3,14 +3,14 @@
 
 import { THEMES_AREA } from '@hermes/plugin-sdk'
 
-// Nous Girl is a surface-and-colour theme: ink and paper in light, paper and
-// ink in dark, and no type system of its own (the host fonts stay). Desktop
-// carries no art, so the picker stays monochrome; the skins paint the banner
-// from these same values.
+// Nous Girl is a surface-and-colour theme: warm neutral UI values in both
+// palettes, no type system of its own (the host fonts stay) and no art on the
+// Desktop side, so the picker preview stays neutral. The two CLI skins paint
+// the banner and the terminal from these same values.
 export const nousGirlTheme = {
   name: 'nous-girl',
   label: 'Nous Girl',
-  description: 'Ink on paper, achromatic light and dark palettes, plus CLI skins',
+  description: 'Warm monochrome light and dark palettes, muted terminal colours, and CLI skins with the Nous Girl in braille',
   colors: {
     background: '#E6E1D3',
     foreground: '#161512',
@@ -114,7 +114,7 @@ export const nousGirlTheme = {
 export default {
   id: 'nous-girl-theme',
   name: 'Nous Girl Theme',
-  description: 'A monochrome ink-and-paper theme for Hermes Desktop and the Agent CLI.',
+  description: 'A warm monochrome theme for Hermes Desktop and the Agent CLI, with CLI skins for the terminal.',
   register(ctx) {
     ctx.register({ id: 'nous-girl', area: THEMES_AREA, data: nousGirlTheme })
   }

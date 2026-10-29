@@ -6,7 +6,7 @@ label: Nous Girl
 version: "0.1.1"
 manifest_version: 2
 api_version: 1
-description: "Ink on paper, achromatic light and dark palettes, plus CLI skins"
+description: "Warm monochrome light and dark palettes, muted terminal colours, and CLI skins with the Nous Girl in braille"
 author: Miguel Euraque (@mykeura)
 license: MIT
 homepage: https://github.com/mykeura/nous-girl
