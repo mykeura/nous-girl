@@ -11,3 +11,8 @@ node_modules/
 
 # Local tooling
 .codegraph/
+
+# Tests are development-only and are not published with the plugin.
+# Keep them locally; the shipped package is the manifest, the Desktop theme
+# and the two skins.
+tests/
