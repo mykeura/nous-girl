@@ -10,7 +10,7 @@ import { THEMES_AREA } from '@hermes/plugin-sdk'
 export const nousGirlTheme = {
   name: 'nous-girl',
   label: 'Nous Girl',
-  description: 'Monochrome ink and paper surfaces, with the Nous Girl in the banner',
+  description: 'Ink on paper, achromatic light and dark palettes, plus CLI skins',
   colors: {
     background: '#E6E1D3',
     foreground: '#161512',
@@ -114,7 +114,7 @@ export const nousGirlTheme = {
 export default {
   id: 'nous-girl-theme',
   name: 'Nous Girl Theme',
-  description: 'A monochrome ink-and-paper theme for Hermes Desktop.',
+  description: 'A monochrome ink-and-paper theme for Hermes Desktop and the Agent CLI.',
   register(ctx) {
     ctx.register({ id: 'nous-girl', area: THEMES_AREA, data: nousGirlTheme })
   }
