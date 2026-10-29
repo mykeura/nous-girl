@@ -61,33 +61,6 @@ Do not edit or delete files inside Hermes core. If you copied the skins, remove 
 
 ![Nous Girl in Hermes Desktop, dark mode: paper on ink surfaces](images/nous-girl-dark.png)
 
-## How it differs from the built-in Nous theme
-
-Hermes ships a native theme called **Nous**. Nous Girl is an independent package, not a variant of it:
-
-| | Nous (built in) | Nous Girl |
-| --- | --- | --- |
-| Palette | GitHub Light/Dark Default | Own palette, achromatic |
-| Accent | Nous blue | None: hierarchy comes from value, not hue |
-| Terminal | Built-in skin | Two skins with the character in braille |
-| Type | Hermes fonts | Hermes fonts (unchanged) |
-
-## Palette
-
-| Role | Light | Dark |
-| --- | --- | --- |
-| Surface | `#E6E1D3` paper | `#141412` ink |
-| Text | `#161512` ink | `#F2EEE3` bone |
-| Focus / rules | `#161512` | `#F2EEE3` |
-| Hairline border | `#55524B` | `#6E6B64` |
-| Destructive | `#9E2F22` | `#BC4A3D` |
-
-The interface is deliberately achromatic: hierarchy comes from value, not hue, so the palette stays calm next to code, diffs and terminal output.
-
-The banner follows the same rule. Both skins ship `banner_hero` and `banner_logo`, and every ramp stop is a value from that skin's palette: the dark skin climbs from `#6E6B64` to `#F2EEE3` at the centre of the figure, the light skin from `#5F5B52` to `#161512`. Shipping both keys is not cosmetic — when a skin omits `banner_logo`, the CLI falls back to `HERMES_AGENT_LOGO`, whose colours are hardcoded to the built-in gold and ignore the active skin, which is why an unthemed wordmark keeps appearing next to themed art.
-
-Release history is in [CHANGELOG.md](CHANGELOG.md).
-
 ## A small way to support the project
 
 If you are considering the Nous Portal **Plus** plan, you can use [my Nous Portal referral link](https://portal.nousresearch.com/r/mykeura): your first month costs **$5 instead of $20**, and I receive a $10 referral credit that helps cover the API usage behind Nous Girl and my other Hermes plugins. It is optional and mutual — the discount applies to the first invoice of a new Plus subscription, and each payment card can back only one referral.
