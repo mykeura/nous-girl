@@ -72,9 +72,21 @@ Hermes ships a native theme called **Nous**. Nous Girl is an independent package
 | Terminal | Built-in skin | Two skins with the character in braille |
 | Type | Hermes fonts | Hermes fonts (unchanged) |
 
-## Design notes
+## Palette
 
-The palette, the banner ramps and the reasoning behind both live in [CONTRIBUTING.md](CONTRIBUTING.md), together with the checks to run before a release. Release history is in [CHANGELOG.md](CHANGELOG.md).
+| Role | Light | Dark |
+| --- | --- | --- |
+| Surface | `#E6E1D3` paper | `#141412` ink |
+| Text | `#161512` ink | `#F2EEE3` bone |
+| Focus / rules | `#161512` | `#F2EEE3` |
+| Hairline border | `#55524B` | `#6E6B64` |
+| Destructive | `#9E2F22` | `#BC4A3D` |
+
+The interface is deliberately achromatic: hierarchy comes from value, not hue, so the palette stays calm next to code, diffs and terminal output.
+
+The banner follows the same rule. Both skins ship `banner_hero` and `banner_logo`, and every ramp stop is a value from that skin's palette: the dark skin climbs from `#6E6B64` to `#F2EEE3` at the centre of the figure, the light skin from `#5F5B52` to `#161512`. Shipping both keys is not cosmetic — when a skin omits `banner_logo`, the CLI falls back to `HERMES_AGENT_LOGO`, whose colours are hardcoded to the built-in gold and ignore the active skin, which is why an unthemed wordmark keeps appearing next to themed art.
+
+Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 ## A small way to support the project
 
