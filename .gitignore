@@ -1,0 +1,13 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+
+# Authoring inputs: the raw logo and palette files the pack was built from.
+# The shipped artefacts are the skins and desktop/plugin.js themselves.
+.sources/
+
+# Local tooling
+.codegraph/

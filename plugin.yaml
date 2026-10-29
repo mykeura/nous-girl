@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Miguel Euraque
+
+name: nous-girl-theme
+label: Nous Girl
+version: "0.1.0"
+manifest_version: 2
+api_version: 1
+description: "Monochrome ink-and-paper theme for Hermes Desktop, with the Nous Girl in gold for the CLI."
+author: Miguel Euraque (@mykeura)
+license: MIT
+homepage: https://github.com/mykeura/nous-girl-theme-for-hermes
+tags: [desktop, themes, appearance]
+requires_hermes: ">=0.21.3"
