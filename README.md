@@ -13,6 +13,20 @@ The package uses Hermes' native Desktop Plugin SDK. It registers one `DesktopThe
 
 The theme is colours only. The Desktop palettes carry no art and no typography override: the host keeps its own fonts, and the character belongs to the terminal banner.
 
+## Preview
+
+### Light mode
+
+![Nous Girl in Hermes Desktop, light mode: ink on paper surfaces](images/nous-girl-light.png)
+
+### Dark mode
+
+![Nous Girl in Hermes Desktop, dark mode: paper on ink surfaces](images/nous-girl-dark.png)
+
+### CLI, dark skin
+
+![The Hermes Agent CLI with the nous-girl-dark skin: the Hermes wordmark and the Nous Girl portrait painted in the skin's own palette](images/nous-girl-cli.png)
+
 ## Compatibility
 
 Nous Girl requires Hermes Desktop and Hermes Agent `>=0.21.3`. It is a unified package: `plugin.yaml` describes the package, `__init__.py` is an inert compatibility entry point for the Agent loader, and `desktop/plugin.js` registers the Desktop theme. The same package ships two CLI/TUI skins for the Agent terminal (see **CLI and TUI skins** below). The Agent entry point registers no tools and changes no configuration.
