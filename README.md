@@ -12,7 +12,7 @@
 ## Requirements
 
 - Hermes Desktop and Hermes Agent `0.21.3` or newer.
-- Read access to this repository. It is private, so the account running the install needs a credential: Hermes resolves an `https://` clone from `GITHUB_TOKEN` or from the `gh` CLI, which means an existing `gh auth login` on that account is enough.
+- `git` in the shell you install from. Hermes fetches the plugin by cloning this public repository over HTTPS — no account, token or `gh` login is involved.
 
 ## Install
 
@@ -22,7 +22,7 @@ hermes plugins install mykeura/nous-girl --enable
 
 Reopen Hermes Desktop and select **Nous Girl** in the theme picker. The package is installed at `$HERMES_HOME/plugins/nous-girl-theme`; nothing is copied by hand. If the theme is missing or still shows an older description after an update, use **⌘K → Reload desktop plugins**.
 
-Install only code you have reviewed. Plugins run in the Desktop process, so keep access to this repository in case you need to remove the package.
+Install only code you have reviewed. Plugins run inside the Desktop process with the same access as Hermes itself, so read the source before enabling one.
 
 ### The CLI skins need one copy step
 
