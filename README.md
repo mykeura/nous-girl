@@ -28,6 +28,8 @@ hermes plugins install mykeura/nous-girl-theme-for-hermes --no-enable
 hermes plugins enable nous-girl-theme
 ```
 
+The repository is private, so the account running the command needs read access to it. Hermes resolves the credential for an `https://` clone from `GITHUB_TOKEN` or the `gh` CLI, which means an existing `gh auth login` on that account is enough.
+
 Hermes installs the package at `$HERMES_HOME/plugins/nous-girl-theme`; no manual copying of `desktop/plugin.js` is required. Reopen Hermes Desktop and select **Nous Girl** in the native theme picker. If the theme is missing or still shows an older description after an update, use **⌘K → Reload desktop plugins**.
 
 To revert, select another Desktop theme. To disable or remove the package, run `hermes plugins disable nous-girl-theme` or `hermes plugins remove nous-girl-theme`. Do not edit or delete Hermes core files.
