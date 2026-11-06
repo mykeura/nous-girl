@@ -6,7 +6,7 @@
 
 - **Two real palettes**, light and dark, in Hermes' native theme picker.
 - **Matching CLI/TUI skins** (`nous-girl-light`, `nous-girl-dark`), each carrying the character and the wordmark as braille banner art.
-- **Legible by measurement**: at least 4.5:1 contrast for text and 3:1 for controls, icons and focus states, against WCAG AA.
+- **Legible by measurement**: at least 4.5:1 contrast for primary and secondary text and 3:1 for controls, borders and focus states, measured against WCAG AA on the surfaces and text tiers the host actually renders.
 - **Colours only**: no fonts, no stylesheet, no DOM, no changes to Hermes core. Your typography and layout stay exactly as they are.
 
 ## Requirements
@@ -26,15 +26,15 @@ Install only code you have reviewed. Plugins run inside the Desktop process with
 
 ### The CLI skins need one copy step
 
-Hermes only reads skins from `~/.hermes/skins/`, so the two skins that travel inside the plugin are not picked up on their own. Copy them once after installing, and again after every update:
+Hermes only reads skins from the `skins/` directory of the active Hermes home (`~/.hermes` by default), so the two skins that travel inside the plugin are not picked up on their own. Copy them once after installing, and again after every update:
 
 ```bash
-mkdir -p ~/.hermes/skins
-cp ~/.hermes/plugins/nous-girl-theme/skins/*.yaml ~/.hermes/skins/
+mkdir -p "${HERMES_HOME:-$HOME/.hermes}/skins"
+cp "${HERMES_HOME:-$HOME/.hermes}"/plugins/nous-girl-theme/skins/*.yaml "${HERMES_HOME:-$HOME/.hermes}/skins/"
 hermes skin use nous-girl-dark
 ```
 
-Confirm the version first: `hermes plugins list` should show the release you followed. Copying from an older install silently overwrites your skins with stale colours — there is no error and no warning. The path uses the plugin's manifest name, `nous-girl-theme`, not the repository directory name.
+Confirm the version first: `hermes plugins list` should show the release you followed. Copying from an older install silently overwrites your skins with stale colours — there is no error and no warning. The path uses the plugin's manifest name, `nous-girl-theme`, not the repository directory name. Skins are scoped per home: if you run a named profile (`hermes -p work`), copy them into that profile's home instead — `~/.hermes/profiles/work/skins/` by default.
 
 Inside a running session, `/skin nous-girl-dark` switches skins without leaving the TUI. Use `nous-girl-dark` on a black terminal: the light skin's dark ink is not legible there.
 

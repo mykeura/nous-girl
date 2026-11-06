@@ -78,7 +78,7 @@ export const nousGirlTheme = {
     blue: '#2E4A6B',
     magenta: '#5B3F57',
     cyan: '#2F5657',
-    white: '#6B6860',
+    white: '#66625A',
     brightBlack: '#55524B',
     brightRed: '#8C2A1E',
     brightGreen: '#325032',

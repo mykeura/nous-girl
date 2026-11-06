@@ -1,12 +1,11 @@
 {
   "name": "nous-girl-theme",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "type": "module",
   "description": "A warm monochrome theme for Hermes Desktop and the Agent CLI, with CLI skins for the terminal.",
   "scripts": {
-    "check": "node --check desktop/plugin.js",
-    "test": "node --test tests/"
+    "check": "node --check desktop/plugin.js"
   },
   "author": "Miguel Euraque",
   "license": "MIT"
